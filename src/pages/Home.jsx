@@ -38,7 +38,7 @@ const Home = () => {
     return match ? match[1].trim() : response.trim();
   }
 
-  const ai = new GoogleGenAI({ apiKey: "AQ.Ab8RN6JvwCF9H0WNWCAu-W9h9ZWkzJuv75UUKzmS1xKhwQ5p_w" });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
   async function getResponse() {
     setLoading(true);
     const response = await ai.models.generateContent({
